@@ -16,6 +16,7 @@ export class VideoService {
     @InjectModel(Video.name) private videoModel: Model<VideoDocument>,
   ) {}
 
+  // eslint-disable-next-line @typescript-eslint/ban-types
   async createVideo(video: Object): Promise<Video> {
     const newVideo = new this.videoModel(video);
     return newVideo.save();
